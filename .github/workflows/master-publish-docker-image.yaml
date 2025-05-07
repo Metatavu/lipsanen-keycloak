@@ -46,6 +46,8 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ steps.image_name.outputs.IMAGE_NAME }}
  
       - name: Download Keycloak Last Login Event Listener
+        env:
+          LAST_LOGIN_EVENT_LISTENER_EXTENSION_VERSION: 0.0.2
         id: download_last_login_event_listener
         run: |
           echo "Downloading Keycloak Last Login Event Listener version ${{ env.LAST_LOGIN_EVENT_LISTENER_EXTENSION_VERSION }}" &&
