@@ -1,6 +1,7 @@
 FROM quay.io/keycloak/keycloak:24.0 as builder
 WORKDIR /opt/keycloak
 ADD providers /opt/keycloak/providers
+ADD theme /opt/keycloak/themes/lipsanen
 ENV KC_DB=mysql
 ENV KC_HEALTH_ENABLED=true
 ENV KC_PROXY=edge
